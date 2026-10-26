@@ -1,6 +1,19 @@
 ## Lab 1 — Instalacja Dockera
 
 Polecenia wykonuj jako root, w podanej kolejności. System docelowy: CentOS Stream 9 lub 10.
+```bash
+sudo dnf remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine \
+                  podman \
+                  runc
+```
+
 
 ```bash
 dnf install -y dnf-plugins-core
@@ -25,6 +38,13 @@ yum info docker-ce
 ```bash
 yum install -y docker-ce
 ```
+```bash
+systemctl enable --now docker
+usermod -a -G docker student
+docker run hello-world
+
+```
+
 
 ## Lab 2 — Weryfikacja instalacji i uruchomienie Dockera
 
